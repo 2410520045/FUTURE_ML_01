@@ -1,0 +1,57 @@
+SALES & DEMAND FORECASTING FOR BUSINESSES
+
+1. OBJECTIVE
+Build a machine-learning model to forecast future monthly sales using historical business data.
+
+2. DATA
+A realistic sample retail dataset was generated for demonstration because no business dataset was supplied.
+It contains daily sales from January 2023 through December 2025 for Electronics, Grocery and Fashion.
+The daily data was aggregated to monthly sales for forecasting.
+
+3. DATA PREPROCESSING
+- Converted dates to datetime format.
+- Sorted observations chronologically.
+- Aggregated daily sales to monthly sales.
+- Checked the chronological structure before modelling.
+
+4. FEATURE ENGINEERING
+- Year
+- Month
+- Quarter
+- Cyclical month features (sine/cosine)
+- 1-month, 2-month and 3-month sales lags
+- 3-month rolling average
+
+5. MODEL
+Random Forest Regression was used because it can model nonlinear relationships between time-based and lag-based features.
+
+6. MODEL EVALUATION
+The final six historical months were kept as a chronological test set.
+Metrics used:
+- MAE: Mean Absolute Error
+- RMSE: Root Mean Squared Error
+- MAPE: Mean Absolute Percentage Error
+
+Average MAPE across the three product categories: 7.67%.
+
+The category with the lowest validation MAPE in this generated example was Grocery.
+This is a descriptive result for the sample data, not a guarantee for real business data.
+
+7. FORECAST
+The model was retrained using the full historical period and used recursively to forecast the next six months.
+
+8. BUSINESS USE
+Forecasts can support:
+- Inventory planning
+- Procurement decisions
+- Staffing
+- Promotion planning
+- Revenue planning
+- Identifying seasonal demand patterns
+
+9. VISUALIZATION
+The project includes historical sales trends, six-month forecasts, forecast-error comparison and forecast summary charts.
+The CSV and Excel outputs are also structured for Power BI import.
+
+10. LIMITATION
+The sample dataset is simulated. For a real submission, replace it with actual company/Kaggle/public historical sales data and rerun the model.
